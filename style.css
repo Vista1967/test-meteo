@@ -4,26 +4,28 @@
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    line-height: 1.5; /* Dodavanje visine linije */
 }
 
-/* Pozadina i središnji izgled */
+/* Pozadina sa slikom */
 body {
-    background: linear-gradient(135deg, #6dd5fa, #2980b9);
+    background-image: url('pozadinska.slika.jpg'); /* Koristite relativnu putanju do slike */
+    background-size: cover; /* Pokriva celu pozadinu */
+    background-position: center; /* Centriranje slike */
+    background-repeat: no-repeat; /* Ne ponavljaj sliku */
     color: #333;
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-    overflow: hidden; /* Sprečava pomeranje na malim ekranima */
+    margin: 0;
 }
 
 .weather-container {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9); /* Blago prozirna pozadina */
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    max-width: 300px; /* Korisno za responsivnost */
+    width: 300px;
     text-align: center;
 }
 
@@ -78,7 +80,6 @@ select {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 15px; /* Razmak između prognoza */
 }
 
 .forecast-item {
@@ -104,15 +105,4 @@ select {
 .forecast-temp, .forecast-desc {
     margin: 5px 0;
     font-size: 1em;
-}
-
-@media (max-width: 600px) {
-    .forecast-item {
-        flex: 1 0 100%; /* Na manjim ekranima, svaki element će zauzeti punu širinu */
-    }
-}
-
-.forecast-item:hover {
-    transform: scale(1.05); /* Lagano uvećanje na hover */
-    transition: transform 0.3s; /* Glatna animacija */
 }
