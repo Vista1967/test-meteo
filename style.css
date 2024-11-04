@@ -8,10 +8,10 @@
 
 /* Pozadina sa slikom */
 body {
-    background-image: url('pozadinska.slika.jpg'); /* Koristite relativnu putanju do slike */
-    background-size: cover; /* Pokriva celu pozadinu */
-    background-position: center; /* Centriranje slike */
-    background-repeat: no-repeat; /* Ne ponavljaj sliku */
+    background-image: url('pozadinska.slika.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #333;
     display: flex;
     align-items: center;
@@ -21,7 +21,7 @@ body {
 }
 
 .weather-container {
-    background: rgba(255, 255, 255, 0.9); /* Blago prozirna pozadina */
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
@@ -78,21 +78,27 @@ select {
 .forecast-container {
     margin-top: 20px;
     display: flex;
-    flex-direction: column; /* Povećava preglednost */
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.forecast-scroll {
+    display: flex;
+    overflow-x: auto; /* Horizontalno skrolovanje */
+    gap: 10px;
+    padding: 10px;
 }
 
 .forecast-list {
     display: flex;
-    overflow: hidden; /* Sakrijte deo koji nije vidljiv */
-    width: 100%;
-    transition: transform 0.5s ease; /* Animacija prilikom prelaska */
+    transition: transform 0.5s ease;
 }
 
 .forecast-item {
     text-align: center;
-    margin: 10px;
-    flex: 1 0 100%; /* Svaki item zauzima celu širinu */
     padding: 10px;
+    min-width: 120px; /* Širina svakog item-a u horizontali */
     background: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

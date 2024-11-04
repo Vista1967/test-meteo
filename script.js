@@ -79,8 +79,8 @@ function getWeatherForecast(city) {
 
 // Funkcija za prikaz vremenske prognoze
 function displayForecast(data) {
-    const forecastContainer = document.querySelector(".forecast-container");
-    forecastContainer.innerHTML = ""; // Očisti prethodni prikaz
+    const forecastList = document.getElementById("forecast-list");
+    forecastList.innerHTML = ""; // Očisti prethodni prikaz
 
     // Prikaz prognoze na svakih 24 sata
     for (let i = 0; i < data.list.length; i += 8) {
@@ -100,9 +100,29 @@ function displayForecast(data) {
             <p class="forecast-temp">${temp}°C</p>
             <p class="forecast-desc">${description}</p>
         `;
-        forecastContainer.appendChild(forecastItem);
+        forecastList.appendChild(forecastItem);
     }
 }
+
+// Funkcija za horizontalno pomeranje prognoza
+let scrollPosition = 0;
+function scrollForecast(direction) {
+    const forecastList = document.getElementById("forecast-list");
+    const itemWidth = forecastList.firstChild.offsetWidth;
+    const scrollAmount = itemWidth + 10; // širina stavke plus razmak
+
+    if (direction === 'next') {
+        scrollPosition += scrollAmount;
+    } else if (direction === 'prev') {
+        scrollPosition -= scrollAmount;
+    }
+    
+    forecastList.style.transform = `translateX(-${scrollPosition}px)`;
+}
+
+// Dugmad za navigaciju
+document.getElementById("next-button").addEventListener("click", () => scrollForecast('next'));
+document.getElementById("prev-button").addEventListener("click", () => scrollForecast('prev'));
 
 // Funkcija za osvežavanje podataka
 function refreshWeather() {
