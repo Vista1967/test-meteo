@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +21,6 @@
     <!-- Učitajte jQuery biblioteku -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
     <div class="weather-container">
         <h1 class="title">Prévisions Météo</h1>
@@ -48,7 +46,9 @@
         <!-- Kontejner za prognozu narednih dana -->
         <div class="forecast-container">
             <h2>Prévisions pour les prochains jours</h2>
-            <!-- Ovde će biti prikazana prognoza kroz JavaScript -->
+            <div class="forecast-list" id="forecast-list"></div>
+            <button id="prev-button" class="nav-button">Précédent</button>
+            <button id="next-button" class="nav-button">Suivant</button>
         </div>
     </div>
 
@@ -66,6 +66,6 @@
     </script>
 
     <!-- JavaScript za aplikaciju -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

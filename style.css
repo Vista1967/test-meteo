@@ -78,14 +78,20 @@ select {
 .forecast-container {
     margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    flex-direction: column; /* Povećava preglednost */
+}
+
+.forecast-list {
+    display: flex;
+    overflow: hidden; /* Sakrijte deo koji nije vidljiv */
+    width: 100%;
+    transition: transform 0.5s ease; /* Animacija prilikom prelaska */
 }
 
 .forecast-item {
     text-align: center;
     margin: 10px;
-    flex: 1 0 45%; /* Podesite širinu svakog elementa prema potrebama */
+    flex: 1 0 100%; /* Svaki item zauzima celu širinu */
     padding: 10px;
     background: #f9f9f9;
     border-radius: 8px;
@@ -105,4 +111,19 @@ select {
 .forecast-temp, .forecast-desc {
     margin: 5px 0;
     font-size: 1em;
+}
+
+/* Stilovi za dugmad */
+.nav-button {
+    margin: 10px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background-color: #0056b3;
 }
