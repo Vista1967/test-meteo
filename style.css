@@ -3,7 +3,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 /* Pozadina sa slikom */
@@ -22,10 +22,11 @@ body {
 
 .weather-container {
     background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     padding: 20px;
-    width: 300px;
+    width: 90%;
+    max-width: 400px;
     text-align: center;
 }
 
@@ -46,11 +47,14 @@ body {
 
 select {
     width: 100%;
-    padding: 8px;
+    padding: 12px;
     font-size: 1em;
-    border-radius: 5px;
+    border-radius: 10px;
     border: 1px solid #ccc;
     margin-top: 5px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
 }
 
 .weather-display {
@@ -69,8 +73,8 @@ select {
 }
 
 .weather-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin-bottom: 10px;
 }
 
@@ -85,9 +89,15 @@ select {
 
 .forecast-scroll {
     display: flex;
-    overflow-x: auto; /* Horizontalno skrolovanje */
+    overflow-x: auto;
     gap: 10px;
     padding: 10px;
+    -webkit-overflow-scrolling: touch; /* Poboljšano skrolovanje na iOS */
+    scrollbar-width: none; /* Sakrivanje scrollbara na desktop browserima */
+}
+
+.forecast-scroll::-webkit-scrollbar {
+    display: none; /* Sakrivanje scrollbara na WebKit browserima */
 }
 
 .forecast-list {
@@ -98,9 +108,9 @@ select {
 .forecast-item {
     text-align: center;
     padding: 10px;
-    min-width: 120px; /* Širina svakog item-a u horizontali */
+    min-width: 100px; /* Prilagođeno za manji ekran */
     background: #f9f9f9;
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -110,24 +120,25 @@ select {
 }
 
 .forecast-icon {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 
 .forecast-temp, .forecast-desc {
     margin: 5px 0;
-    font-size: 1em;
+    font-size: 0.9em; /* Prilagođena veličina teksta */
 }
 
 /* Stilovi za dugmad */
 .nav-button {
     margin: 10px;
-    padding: 10px;
+    padding: 12px;
     background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     cursor: pointer;
+    font-size: 1em;
 }
 
 .nav-button:hover {

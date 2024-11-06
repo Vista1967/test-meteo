@@ -2,36 +2,33 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Météo</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Ikone i manifest za PWA -->
+    <!-- Икона и манифест за PWA -->
     <link rel="icon" type="image/png" sizes="180x180" href="Meteo-180x180.png">
     <link rel="apple-touch-icon" sizes="180x180" href="Meteo-180x180.png">
     <link rel="apple-touch-icon" sizes="192x192" href="Meteo-192x192.png">
     <link rel="apple-touch-icon" sizes="512x512" href="Meteo-512x512.png">
     <link rel="manifest" href="manifest.json">
-
-    <!-- Meta tagovi za iOS optimizaciju -->
+    <!-- Мета тагови за iOS оптимизацију -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Météo">
-
-    <!-- Učitajte jQuery biblioteku -->
+    <!-- Учитавање jQuery библиотеке -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <div class="weather-container">
         <h1 class="title">Prévisions Météo</h1>
         
-        <!-- Izbor grada -->
+        <!-- Избор града -->
         <div class="city-selector">
             <label for="city-select">Sélectionnez la ville :</label>
             <select id="city-select"></select>
         </div>
         
-        <!-- Prikaz trenutnih podataka o vremenu -->
+        <!-- Приказ тренутних података о времену -->
         <div class="weather-display">
             <img id="weather-icon" class="weather-icon" alt="Weather Icon">
             <p class="weather-item"><span id="temperature">--</span>°C</p>
@@ -43,19 +40,18 @@
             <p class="weather-item description"><span id="description">--</span></p>
         </div>
         
-        <!-- Kontejner za prognozu narednih dana -->
+        <!-- Контејнер за прогнозу наредних дана -->
         <div class="forecast-container">
             <h2>Prévisions pour les prochains jours</h2>
             <div class="forecast-scroll" id="forecast-list">
-                <!-- Ovde će JavaScript dinamički dodati prognoze za svaki dan -->
+                <!-- Овде ће JavaScript динамички додати прогнозе за сваки дан -->
             </div>
-            <!-- Dugmad za navigaciju kroz prognoze -->
+            <!-- Дугмад за навигацију кроз прогнозе -->
             <button id="prev-button" class="nav-button">Précédent</button>
             <button id="next-button" class="nav-button">Suivant</button>
         </div>
     </div>
-
-    <!-- Registracija Service Workera -->
+    <!-- Регистрација Service Workera -->
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/worker.js')
@@ -67,8 +63,7 @@
                 });
         }
     </script>
-
-    <!-- JavaScript za aplikaciju -->
+    <!-- JavaScript за апликацију -->
     <script src="script.js" defer></script>
 </body>
 </html>
